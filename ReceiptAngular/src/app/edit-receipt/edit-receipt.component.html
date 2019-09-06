@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="receiptForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="companyName">Company Name:</label>
+            <input
+            class="form-control"
+            id="cmpName"
+            type="text"
+            formControlName="companyName"
+            >
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input
+            class="form-control"
+            id="date"
+            type="Date"
+            formControlName="date"
+            >
+        </div>
+        <div class="form-group">
+            <label for="number">Receipt Number:</label>
+            <input
+            class="form-control"
+            id="receiptNum"
+            type="text"
+            formControlName="number"
+            >
+        </div>
+        <div class="form-group">
+            <label for="type">Receipt Type:</label>
+            <input
+            class="form-control"
+            id="type"
+            type="text"
+            formControlName="type"
+            >
+        </div>
+        <div class="form-group">
+            <label for="taxPercentage">Tax Percentage:</label>
+            <input
+            class="form-control"
+            id="tax"
+            type="number"
+            formControlName="taxPercentage"
+
+            >
+        </div>
+        <div class="form-group">
+            <label for="totalPrice">Total Cost:</label>
+            <input
+            class="form-control"
+            id="cost"
+            type="number"
+            formControlName="totalPrice"
+            >
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="button-group">
+              <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="!receiptForm.valid">
+                Save</button>
+              <button
+                class="btn btn-danger"
+                (click)="onCanceled()">Cancel</button>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+

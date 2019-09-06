@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-xs-10">
+    <div class="panel panel-default">
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td>
+              Company Name
+            </td>
+            <td>
+              Receipt Type
+            </td>
+            <td>
+              Date
+            </td>
+            <td>
+              Receipt Number
+            </td>
+            <td>
+              Tax Percentage
+            </td>
+            <td>
+              Total Cost
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+    <div class="col-xs-2">
+      <div
+        class="btn-group"
+        appDropdown
+        >
+      <button
+        type="button"
+        class="btn btn-default dropdown-toggle">
+        Sort By: <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onSortByType()" style="cursor: pointer;">Type</a></li>
+        <li><a (click)="onSortByDateInc()" style="cursor: pointer;">Date(Increasing)</a></li>
+        <li><a (click)="onSortByDateDec()" style="cursor: pointer;">Date(Decreasing)</a></li>
+        <li><a (click)="onSortByCostInc()" style="cursor: pointer;">Cost(Increasing)</a></li>
+        <li><a (click)="onSortByCostDec()" style="cursor: pointer;">Cost(Decreasing)</a></li>
+
+      </ul>
+      </div>
+    </div>
+</div>
+<div class="row">
+  <app-receipt-detail
+  *ngFor="let rec of receipts"
+  [receipt]="rec"
+  (deleteEvent)="update()"></app-receipt-detail>
+</div>
